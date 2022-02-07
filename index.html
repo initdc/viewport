@@ -8,42 +8,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/fibone.svg" sizes="any" type="image/svg+xml" />
     <style>
-      * {
+      body {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
 
       body > * {
+        box-sizing: border-box;
         margin: 1em 8px;
+        padding: 0;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0 8px;
+        background-color: rgba(255, 255, 255, 0.7);
       }
 
       .half {
-        margin: 0;
-        width: calc(50%);
+        margin: 1em 0;
+        width: 50vw;
         background: lightblue;
       }
     </style>
   </head>
   <body>
-    <pre>screen size: <code id="s"></code></pre>
-    <pre>outer size: <code id="o"></code></pre>
-    <pre>inner (layout viewport): <code id="i"></code></pre>
-    <pre>devicePixelRatio: <code id="p"></code></pre>
-    <pre>viewport size: <code id="v"></code></pre>
-    <pre>visualViewport: <code id="vv"></code></pre>
+    <section class="fixed">
+      <pre>screen size: <code id="s"></code></pre>
+      <pre>outer size: <code id="o"></code></pre>
+      <pre>inner (layout viewport): <code id="i"></code></pre>
+      <pre>devicePixelRatio: <code id="p"></code></pre>
+      <pre>viewport size: <code id="v"></code></pre>
+      <pre>visualViewport: <code id="vv"></code></pre>
+    </section>
 
     <br />
-    <pre class="half">halfWidth:
+    <svg width="32px" height="100vh" fill="lightBlue">
+      <rect width="100%" height="100%" />
+    </svg>
+    <pre>svg: <code>height="100vh"</code></pre>
+
+    <br />
+    <pre class="half">half of viewport width:
       <code>.half {
-        width: calc(50%);
+        margin: 1em 0;
+        width: 50vw;
         background: lightblue;
       }</code>
     </pre>
 
     <br />
-    <pre>svg: width="400px"</pre>
     <img width="400px" src="fibone.svg" />
+    <pre>svg: <code>width="400px"</code></pre>
   </body>
   <script>
     const s = document.querySelector("#s");
